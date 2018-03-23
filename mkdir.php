@@ -1,4 +1,6 @@
 
 <?php 
-	mkdir(__DIR__.'emails/'.$pasta, 0755, true);
+	$nomePasta	= $_POST['nomePasta'];
+
+	mkdir(__DIR__.'/emails/'.$nomePasta.'/images/', 0777, true);
 ?>

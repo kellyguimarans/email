@@ -28,7 +28,7 @@
         <h1 class="col-12 text-center">Santander</h1>
       </div>
       
-      <form>
+      <form enctype="multipart/form-data" name="fileUpload">
         <!-- Cria uma pasta para cada email -->
 
         <div class="form-group row">
@@ -38,6 +38,16 @@
           </div>
           <div class="col-sm-2">
             <button type="button" id="adicionaPasta" class="btn btn-secondary form-control"> Adicionar </button>
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <label for="pasta" class="col-sm-2 col-form-label">Upload Imagens</label>
+          <div class="col-sm-8">
+            <input type="file" name="fileUpload" id="fileUpload" class="form-control" placeholder="Digite o texto" multiple />
+          </div>
+          <div class="col-sm-2">
+            <button type="button" id="adicionaImagens" class="btn btn-secondary form-control"> Adicionar </button>
           </div>
         </div>
 
@@ -81,8 +91,10 @@
               <img src="<?php echo $num ?>" class="img-thumbnail d-block" />
             </label>
           </div>
-            
         <?php } ?>
+          <!-- Adiciona a imagem aqui sempre que selecionado o radio -->
+          <!-- pra pegar o tamanho real da iamgem -->
+          <img id="fullimage" class="invisible" src=""  style="display: none;" />
         </div>
         <!-- Fim de todas as imagens -->
 
@@ -106,7 +118,7 @@
             <input type="text" class="form-control" id="colAltura" placeholder="Digite a Altura" />
           </div>
         </div>
-        
+
         <!-- Botão de coluna -->
         <div class="form-group row">
           <div class="col-12">
