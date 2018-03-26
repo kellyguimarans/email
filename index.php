@@ -28,7 +28,7 @@
         <h1 class="col-12 text-center">Santander</h1>
       </div>
       
-      <form name="fileUpload" enctype="multipart/form-data" method="POST">
+      <form enctype="multipart/form-data" method="POST">
         <!-- Cria uma pasta para cada email -->
 
         <div class="form-group row">
