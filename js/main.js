@@ -148,19 +148,19 @@ function uploadImagem(nomePasta, form){
     url        : page,
     type       : 'POST',
     data       : {  
-                    form: new FormData(jQuery('form[name="fileUpload"]')[0]), 
+                    form: new FormData(this), 
                     nomePasta: nomePasta 
                  },
     contentType: false,
     processData: false,
     success: function (data) {
-        alert("Imagem "+form+ " armazenada na pasta " +nomePasta);
+      alert("Imagem "+form+ " armazenada na pasta " +nomePasta);
     }      
   });
 }
 
 jQuery('#adicionaImagens').click(function(){
-  uploadImagem(jQuery('#pasta').val());
+  uploadImagem(jQuery('#pasta').val(), jQuery('#fileUpload').val());
 });
 
 

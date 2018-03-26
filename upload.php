@@ -2,12 +2,19 @@
   $nomePasta  = $_POST['nomePasta'];
  
   $nome_tmp = $_FILES['fileUpload']['tmp_name'];
-
-  $nome_real = basename($_FILES['fileUpload']['name']);
   
   $destino = 'emails/'.$nomePasta.'/images/';
 
-  // copy ($nome_tmp, $destino);
-  move_uploaded_file( $_FILES['fileUpload']['tmp_name'], __DIR__."emails/'.$nomePasta.'/images/".$_FILES['fileUpload']['name']) 
+  $nome_real = $destino.basename($_FILES['fileUpload']['name']);
+
+  // copy ($nome_tmp, $nome_real);
+  move_uploaded_file($nome_tmp, $nome_real);
+
+  echo '<script type="text/javascript"> alert("'$nome_real'");</script>';
+
+  var_dump($nomePasta);
+  var_dump($nome_tmp);
+  var_dump($destino);
+  var_dump($nome_real);
 ?>
 

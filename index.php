@@ -4,7 +4,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
+    
     <!-- Icones -->
     <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
 
@@ -14,10 +14,10 @@
     <!-- Editor de texto -->
     <link rel="stylesheet" type="text/css" href="css/froala_editor.min.css">
     <link rel="stylesheet" type="text/css" href="css/froala_editor.pkgd.min.css">
-    <link rel="stylesheet" href="css/plugins/colors.min.css">
+    <link rel="stylesheet" type="text/css" href="css/plugins/colors.min.css">
 
     <!-- Sorteble -->
-    <link href="http://code.jquery.com/ui/1.11.1/themes/smoothness/jquery-ui.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/jquery-ui.css" >
 
     <title>Email marketing</title>
   </head>
@@ -28,7 +28,7 @@
         <h1 class="col-12 text-center">Santander</h1>
       </div>
       
-      <form enctype="multipart/form-data" name="fileUpload">
+      <form name="fileUpload" enctype="multipart/form-data" method="POST">
         <!-- Cria uma pasta para cada email -->
 
         <div class="form-group row">
@@ -44,7 +44,7 @@
         <div class="form-group row">
           <label for="pasta" class="col-sm-2 col-form-label">Upload Imagens</label>
           <div class="col-sm-8">
-            <input type="file" name="fileUpload" id="fileUpload" class="form-control" placeholder="Digite o texto" multiple />
+            <input type="file" name="fileUpload[]" id="fileUpload" class="form-control" placeholder="Digite o texto" multiple="multiple"/>
           </div>
           <div class="col-sm-2">
             <button type="button" id="adicionaImagens" class="btn btn-secondary form-control"> Adicionar </button>
@@ -138,8 +138,10 @@
     </main>
 
     <!-- jQuery first, then Tether, then Bootstrap JS. -->
-    <script src="http://code.jquery.com/jquery-1.11.1.js"></script>
+    <script src="js/jquery-1.11.1.js"></script>
     <script src="js/bootstrap.min.js"></script>
+    <!-- jquery ui -->
+    <script src="js/jquery-ui.js"></script>
     <!-- Editor de texto -->
     <script src="js/froala_editor.min.js"></script>
     <script src="js/plugins/colors.min.js"></script>
@@ -149,8 +151,7 @@
     <script type="text/javascript" src="js/plugins/font_family.min.js"></script>
     <script type="text/javascript" src="js/plugins/font_size.min.js"></script>
     <script type="text/javascript" src="js/plugins/align.min.js"></script>
-    <!-- jquery ui -->
-    <script src="http://code.jquery.com/ui/1.11.1/jquery-ui.js"></script>
+    
 
 
     <script src="js/main.js"></script>
