@@ -5,12 +5,7 @@
   
   $destino = 'emails/'.$nomePasta.'/images/';
 
-  $nome_real = $destino.basename($_FILES['fileUpload']['name']);
-
-  var_dump($nomePasta);
-  var_dump($nome_tmp);
-  var_dump($destino);
-  var_dump($nome_real);
+  $nome_real = $destino.$_FILES['fileUpload']['name'];
 
   // copy ($nome_tmp, $nome_real);
   move_uploaded_file($nome_tmp, $nome_real);

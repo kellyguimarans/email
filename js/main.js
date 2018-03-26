@@ -142,15 +142,18 @@ jQuery('#adicionaPasta').click(function(){
 
 // Função de upload de imagens
 function uploadImagem(nomePasta, form){
+
   var page = 'upload.php';
+  var blobFile = jQuery('#fileUpload')[0].files[0];
+  var fd = new FormData();
+
+  fd.append('fileUpload', blobFile);
+  fd.append('nomePasta', nomePasta);
 
   jQuery.ajax({
     url        : page,
     type       : 'POST',
-    data       : {  
-                    form: new FormData(this), 
-                    nomePasta: nomePasta 
-                 },
+    data       : fd,
     contentType: false,
     processData: false,
     success: function (data) {
