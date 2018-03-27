@@ -144,10 +144,13 @@ jQuery('#adicionaPasta').click(function(){
 function uploadImagem(nomePasta, form){
 
   var page = 'upload.php';
-  var blobFile = jQuery('#fileUpload')[0].files[0];
+  var blobFile = jQuery('#fileUpload')[0];
   var fd = new FormData();
 
-  fd.append('fileUpload', blobFile);
+  for(var i = 0; i < blobFile.files.length; i++){
+    fd.append('fileUpload[]', blobFile.files[i]);
+  }
+  
   fd.append('nomePasta', nomePasta);
 
   jQuery.ajax({
@@ -157,11 +160,12 @@ function uploadImagem(nomePasta, form){
     contentType: false,
     processData: false,
     success: function (data) {
-      alert("Imagem "+form+ " armazenada na pasta " +nomePasta);
+      // alert("Imagem "+fd+ " armazenada na pasta " +nomePasta);
+      jQuery('#mensagem').html(data);
     }      
   });
 }
-
+// Dispara a função de upload
 jQuery('#adicionaImagens').click(function(){
   uploadImagem(jQuery('#pasta').val(), jQuery('#fileUpload').val());
 });

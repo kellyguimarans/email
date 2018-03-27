@@ -28,7 +28,7 @@
         <h1 class="col-12 text-center">Santander</h1>
       </div>
       
-      <form name="fileUpload" enctype="multipart/form-data" method="POST">
+      <form enctype="multipart/form-data" method="POST">
         <!-- Cria uma pasta para cada email -->
 
         <div class="form-group row">
@@ -44,11 +44,13 @@
         <div class="form-group row">
           <label for="pasta" class="col-sm-2 col-form-label">Upload Imagens</label>
           <div class="col-sm-8">
-            <input type="file" name="fileUpload[]" id="fileUpload" class="form-control" placeholder="Digite o texto" multiple="multiple"/>
+            <input type="file" name="fileUpload[ ]" id="fileUpload" class="form-control" placeholder="Digite o texto" multiple/>
           </div>
           <div class="col-sm-2">
-            <button type="button" id="adicionaImagens" class="btn btn-secondary form-control"> Adicionar </button>
+            <button type="button" name="adicionaImagens" id="adicionaImagens" class="btn btn-secondary form-control"> Adicionar </button>
           </div>
+
+          <div class="col-12" id="mensagem"></div>
         </div>
 
         <hr />
@@ -79,6 +81,8 @@
         <div class="form-group row">
 
         <?php 
+          $nomePasta  = $_POST['nomePasta'];
+          
           $files = glob("emails/images/*.*");
 
           for ($i=0; $i<count($files); $i++) { 
