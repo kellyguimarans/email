@@ -81,8 +81,6 @@
         <div class="form-group row">
 
         <?php 
-          $nomePasta  = $_POST['nomePasta'];
-          
           $files = glob("emails/images/*.*");
 
           for ($i=0; $i<count($files); $i++) { 
